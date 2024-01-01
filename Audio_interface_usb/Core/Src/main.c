@@ -108,6 +108,10 @@ int main(void)
   MX_I2C1_Init();
   MX_I2S3_Init();
   /* USER CODE BEGIN 2 */
+	CS43_Init(hi2c1, MODE_I2S);
+	CS43_SetVolume(20); //0 - 100,, 40
+	CS43_Enable_RightLeft(CS43_RIGHT_LEFT);
+	CS43_Start();
 //Build Sine wave
 	for(uint16_t i=0; i<sample_N; i++)
 	{
@@ -272,7 +276,6 @@ static void MX_GPIO_Init(void)
 /* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
-  __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();

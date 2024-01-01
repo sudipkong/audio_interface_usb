@@ -1,0 +1,24 @@
+05:34:47 **** Incremental Build of configuration Debug for project Audio_interface ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:24:
+../Core/Inc/MY_CS43L22.h:66:13: warning: 'write_register' declared 'static' but never defined [-Wunused-function]
+   66 | static void write_register(uint8_t reg, uint8_t *data);
+      |             ^~~~~~~~~~~~~~
+../Core/Inc/MY_CS43L22.h:67:13: warning: 'read_register' declared 'static' but never defined [-Wunused-function]
+   67 | static void read_register(uint8_t reg, uint8_t *data);
+      |             ^~~~~~~~~~~~~
+../Core/Src/main.c:261:13: warning: 'MX_TIM2_Init' defined but not used [-Wunused-function]
+  261 | static void MX_TIM2_Init(void)
+      |             ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "Audio_interface.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Kystron\OneDrive\Electronics\STM32CubeIDE\Audio_interface\Audio_interface\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Audio_interface.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Audio_interface.elf
+ 
+arm-none-eabi-size   Audio_interface.elf 
+arm-none-eabi-objdump -h -S  Audio_interface.elf  > "Audio_interface.list"
+   text	   data	    bss	    dec	    hex	filename
+  21884	     20	   2196	  24100	   5e24	Audio_interface.elf
+Finished building: default.size.stdout
+ 
+Finished building: Audio_interface.list
+ 
