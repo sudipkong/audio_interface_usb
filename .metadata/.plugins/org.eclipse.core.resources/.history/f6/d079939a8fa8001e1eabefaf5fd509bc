@@ -57,7 +57,7 @@ References:
 typedef enum
 {
 	MODE_I2S = 0,
-	//MODE_ANALOG
+	MODE_ANALOG,
 }CS43_MODE;
 
 
