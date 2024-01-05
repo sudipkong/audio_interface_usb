@@ -1,10 +1,10 @@
-03:41:16 **** Incremental Build of configuration Debug for project Audio_interface_usb ****
+03:51:54 **** Incremental Build of configuration Debug for project Audio_interface_usb ****
 make -j4 all 
 arm-none-eabi-size  Audio_interface_usb.elf 
    text	   data	    bss	    dec	    hex	filename
-  21360	     20	   2124	  23504	   5bd0	Audio_interface_usb.elf
+  42468	    308	  20068	  62844	   f57c	Audio_interface_usb.elf
 Finished building: default.size.stdout
  
 
-03:41:16 Build Finished. 0 errors, 0 warnings. (took 292ms)
+03:51:54 Build Finished. 0 errors, 0 warnings. (took 403ms)
 
