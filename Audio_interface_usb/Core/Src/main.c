@@ -21,7 +21,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "MY_CS43L22.h"
+//#include "MY_CS43L22.h"
+#include "cs43l22.h"      // from stm lib
 #include <math.h>
 /* USER CODE END Includes */
 
@@ -108,10 +109,18 @@ int main(void)
   MX_I2C1_Init();
   MX_I2S3_Init();
   /* USER CODE BEGIN 2 */
-	CS43_Init(hi2c1, MODE_I2S);
-	CS43_SetVolume(20); //0 - 100,, 40
-	CS43_Enable_RightLeft(CS43_RIGHT_LEFT);
-	CS43_Start();
+
+	// CS43_Init(hi2c1, MODE_I2S);
+	// CS43_SetVolume(20); //0 - 100,, 40
+	// CS43_Enable_RightLeft(CS43_RIGHT_LEFT);
+	// CS43_Start();
+
+
+//--stm--lib- codec initialization
+//cs43l22_Init(CS43L22_CHIPID_ADDR,OUTPUT_DEVICE_HEADPHONE,50,AUDIO_FREQUENCY_48K);
+ AUDIO_OUT_Init(OUTPUT_DEVICE_HEADPHONE,50,AUDIO_FREQUENCY_48K);
+
+
 //Build Sine wave
 	for(uint16_t i=0; i<sample_N; i++)
 	{
@@ -120,7 +129,11 @@ int main(void)
 		dataI2S[i*2 + 1] =(mySinVal )*8000; //Left data  (1 3 5 7 9 11 13)
 	}
 	
-	HAL_I2S_Transmit_DMA(&hi2s3, (uint16_t *)dataI2S, sample_N*2);
+	//HAL_I2S_Transmit_DMA(&hi2s3, (uint16_t *)dataI2S, sample_N*2);
+
+  //cs43l22_Play(AUDIO_I2C_ADDRESS,NULL,NULL);
+ 
+  AUDIO_OUT_Play((uint16_t *)dataI2S,sample_N*2);
   /* USER CODE END 2 */
 
   /* Infinite loop */
