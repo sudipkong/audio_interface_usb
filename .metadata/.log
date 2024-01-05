@@ -737,3 +737,18 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2024-01-02 01:05:54.060
 !MESSAGE Indexed 'Audio_interface_usb' (26 sources, 124 headers) in 2.61 sec: 12,700 declarations; 54,842 references; 1 unresolved inclusions; 92 syntax errors; 240 unresolved names (0.35%)
+!SESSION 2024-01-05 21:45:06.133 -----------------------------------------------
+eclipse.buildId=Version 1.14.0
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-01-05 21:45:33.895
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-01-05 21:45:33.902
+!MESSAGE Log4j2 initialized with config file C:\Users\Kystron\OneDrive\Electronics\STM32CubeIDE\Audio_interface\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-01-05 21:45:43.524
+!MESSAGE Started RMI Server, listening on port 41337
