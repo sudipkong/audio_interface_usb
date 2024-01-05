@@ -72,7 +72,7 @@ uint16_t i_t;
 
 uint32_t myDacVal;
 
-int16_t dataI2S[100];
+int16_t dataI2S[100];			// audio data holder
 /* USER CODE END 0 */
 
 /**
